@@ -15,11 +15,24 @@
     <title>Qaska</title>
 </head>
 <body>
-    <header class="header content padding hor max center">
-        Hello
+    <header class="header content jus padding hor max center">
+        <a href="/">
+            <img src="media/img/logo.svg" alt="">
+        </a>
+        <div class="content center">
+            <!-- >>>> FIXUS <<<< -->
+            <div class="input_parent">
+                <input type="text" class="input anim text grey">
+                <div class="placeholder">Find a question...</div>
+            </div>
+            <div class="margin hor">
+                <a href="#" class="button">Log in</a>
+            </div>
+        </div>
     </header>
     <main class="container">
-        <section class="section">   
+        <!-- SECTION 1 -->
+        <section class="section section_n1">
             <div class="content jus wrap">
                 <div class="block">
                     <div class="main_title">Welcome to Qaska</div>
@@ -53,7 +66,7 @@
                         </div>
                         <div class="card_content padding">
                             <div class="text white" id="card_res_print">
-                                &#173;	
+                                &#173;
                             </div>
                         </div>
                         <div class="card_footer padding">
@@ -69,22 +82,54 @@
                 </div>
             </div>
         </section>
+        <nav class="nav block center">
+            <div class="bg"></div>
+            <ol class="nav_list padding hor text small content jus">
+                <li class="nav_list_item active">
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li class="nav_list_item">
+                    <a href="#">
+                        Catalog
+                    </a>
+                </li>
+                <li class="nav_list_item">
+                    <a href="#">
+                        Chat
+                    </a>
+                </li>
+                <li class="nav_list_item">
+                    <a href="#">
+                        About
+                    </a>
+                </li>
+                <li class="nav_list_item">
+                    <a href="#">
+                        Rules
+                    </a>
+                </li>
+                <div class="stroke"></div>
+            </ol>
+        </nav>
+        <!-- SECTION 2 -->
         <section class="section">
             <!-- ======================== AUTHORS ======================== -->
             <div class="content text wrap">
                 <div class="centered text_center margin">
-                    <div class="block">
+                    <div class="block center">
                         <img src="media/img/path2.svg" alt="path" class="path" id="text_path">
-                        <span><strong>Qaska</strong> - programming community</span> <br>
-                        <span class="grey">Created for <span id="fade_text">people</span></span>
+                        <div><strong>Qaska</strong> - programming community</div> <br>
+                        <div class="grey content">Created for &#173;<div class="jump_text">people</div></div>
                     </div>
                 </div>
                 <div class="centered text_center">
                     <div class="block">
                         Authors
-                        <div class="block author">
-                            <img src="media/img/circleRed1.svg" class="path circle" alt="circle" id="circleRed1">
+                        <img src="media/img/circleRed1.svg" class="path circle" alt="circle" id="circleRed1">
 
+                        <div class="block author fade left">
                             <div class="card tabel margin ver min">
                                 <div class="user content center">
                                     <div class="user_ico">
@@ -112,9 +157,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="block author">
-                            <img src="media/img/circlePurple1.svg" class="path circle" alt="circle" id="circlePurple1">
 
+                        <img src="media/img/circlePurple1.svg" class="path circle" alt="circle" id="circlePurple1">
+
+                        <div class="block author fade left delay-1">
                             <div class="card tabel margin ver min">
                                 <div class="user content center">
                                     <div class="user_ico">
@@ -146,13 +192,14 @@
                 </div>
             </div>
         </section>
+        <!-- SECTION 3 -->
         <section class="section">
             <div class="content wrap">
-                <div class="card centered block margin">
+                <div class="card centered block margin fade top">
                     <div class="card_header_up centered block">
                         Questions
                     </div>
-                    <div class="card_content padding text min grey margin bottom top-m text_center">
+                    <div class="card_content padding text mid grey margin bottom top-m text_center">
                         Ask questions and it will be answered!
                     </div>
                     <div class="card_footer padding text_center block">
@@ -162,12 +209,12 @@
                         </div>
                     </div>
                 </div>
-                <img src="media/img/vopros.svg" class="DECORE" id="vopros">
-                <div class="card centered block margin">
+                <img src="media/img/vopros.svg" class="path jump">
+                <div class="card centered block margin fade top delay-1">
                     <div class="card_header_up centered block">
                         Help
                     </div>
-                    <div class="card_content padding text min grey margin bottom top-m text_center">
+                    <div class="card_content padding text mid grey margin bottom top-m text_center">
                         Help those who need your help. And soon he will help you
                     </div>
                     <div class="card_footer padding text_center block">
@@ -177,11 +224,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="card centered block margin">
+                <div class="card centered block margin fade top">
                     <div class="card_header_up centered block">
                         Communicate
                     </div>
-                    <div class="card_content padding text min grey margin bottom top-m text_center">
+                    <div class="card_content padding text mid grey margin bottom top-m text_center">
                         Communicate in global IT chat
                     </div>
                     <div class="card_footer padding text_center block">
@@ -193,6 +240,7 @@
                 </div>
             </div>
         </section>
+        <!-- SECTION 4 -->
         <section class="section">
             <img src="media/img/choosePath.svg" class="path" id="choosePath">
             <div class="card content center text big padding choose">
@@ -250,6 +298,7 @@
                 </div>
             </div>
         </section>
+        <!-- SECTION 5 -->
         <section class="section">
             <!-- ======================== CONTACTS ======================== -->
             <div class="content text wrap">
@@ -258,7 +307,7 @@
                         Contacts
                         <img src="media/img/circlePurple2.svg" class="path circle" alt="circle" id="circlePurple2">
                         <!-- ===== Bogdan ===== -->
-                        <div class="block author">
+                        <div class="block author fade right">
                             <div class="card tabel margin ver min">
                                 <div class="user content center">
                                     <div class="user_ico">
@@ -292,7 +341,7 @@
                         </div>
 
                         <!-- ==== Ainur ==== -->
-                        <div class="block author">
+                        <div class="block author fade right delay-1">
                             <div class="card tabel margin ver min">
                                 <div class="user content center">
                                     <div class="user_ico">
@@ -326,7 +375,7 @@
                         </div>
 
                         <!-- ==== Comment ==== -->
-                        <div class="block author">
+                        <div class="block author fade right delay-2">
                             <a href="#" class="none_dec">
                                 <div class="card tabel margin ver min lighting">
                                     <div class="user content center">
@@ -344,7 +393,7 @@
                     <div class="block">
                         Share with your friends
                         <!-- VK -->
-                        <div class="block author">
+                        <div class="block author fade left">
                             <a href="#" class="none_dec">
                                 <div class="card tabel margin ver min lighting">
                                     <div class="user content center">
@@ -358,13 +407,13 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="block author">
-                            <img src="media/img/circleRed2.svg" class="path circle" alt="circle" id="circleRed2">
+                        <img src="media/img/circleRed2.svg" class="path circle" alt="circle" id="circleRed2">
+                        <div class="block author fade left delay-1">
                             <a href="#" class="none_dec">
                                 <div class="card tabel margin ver min lighting">
                                     <div class="user content center">
                                         <div class="user_ico">
-                                            <img src="https://avatars0.githubusercontent.com/u/43468837?s=460&v=4" alt="ico">
+                                            <img src="https://st4.depositphotos.com/10953546/21391/v/1600/depositphotos_213910370-stock-illustration-flat-instagram-camera-icons-notifications.jpg" alt="ico">
                                         </div>
                                         <div class="padding name">
                                             Instagram
@@ -378,11 +427,36 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-
+    <footer class="footer padding max content jus center">
+        <div class="content center">
+            <img src="media/img/logo.svg">
+            <div class="padding hor min">
+                Qaska
+            </div>
+        </div>
+        <div class="text grey max small">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, totam id quis excepturi corporis sed veritatis voluptatibus! Sed fugiat id culpa ex mollitia quas excepturi nulla dolore. Et, doloribus. Id.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, totam id quis excepturi corporis sed veritatis voluptatibus! Sed fugiat id culpa ex mollitia quas excepturi nulla dolore. Et, doloribus. Id.
+        </div>
+        <div class="card block">
+            <div class="card_header_up centered block">
+                Join us!
+            </div>
+            <div class="margin top-m text mid card_content padding text_center block">
+                <div class="margin ver">
+                    <!-- >>>> FIXME <<<< -->
+                    <a href="#" class="button">Log in</a>
+                </div>
+                <div class="margin ver">
+                    <!-- >>>> FIXME <<<< -->
+                    <a href="#" class="button red">Sing up</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="media/js/print.js"></script>
     <script src="media/js/animation.js"></script>
+    <script src="media/js/fade.js"></script>
 </body>
 </html>

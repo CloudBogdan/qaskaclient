@@ -14,8 +14,6 @@ body {
 
     margin: 0;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
 
     background: #202020;
     color: #fff;
@@ -37,6 +35,8 @@ body {
     --min: 10px;
 
     --shadow: 0 5px 20px rgba(0,0,0, .2);
+
+    --containerwidth: 980px;
 }
 
 li {
@@ -117,12 +117,18 @@ a.none_dec {
 .margin.bottom.top-m {
     margin: -20px 0 20px 0;
 }
+.margin.top-m {
+    margin: -40px 0 0 0;
+}
 
 .padding {
     padding: var(--middle);
 }
 .padding.min {
     padding: var(--min);
+}
+.padding.max {
+    padding: var(--max);
 }
 .padding.ver {
     padding: var(--middle) 0;
@@ -170,7 +176,7 @@ a.none_dec {
 
 /* Container */
 .container {
-    max-width: 1100px;
+    max-width: var(--containerwidth);
     width: 100vw;
     margin: 200px auto;
 }
@@ -180,8 +186,8 @@ a.none_dec {
     flex-direction: column;
     margin: 40px 0;
 }
-.sec2 {
-    height: 370px;
+.section_n1 {
+    height: calc(100vh - 240px);
 }
 .punct {
     width: 500px;
@@ -199,6 +205,9 @@ a.none_dec {
 .text {
     font-size: var(--textmiddle);
 }
+.text.small {
+    font-size: var(--textsmall);
+}
 .text.big {
     font-size: var(--textbig);
 }
@@ -207,6 +216,9 @@ a.none_dec {
     color: var(--grey);
 }
 .text.min {
+    width: 150px;
+}
+.text.mid {
     width: 240px;
 }
 .text.max {
@@ -214,6 +226,30 @@ a.none_dec {
 }
 .text_center {
     text-align: center;
+}
+
+/* Fade */
+.fade {
+    opacity: 0;
+    transition: .4s;
+}
+.fade.delay-1 {
+    transition-delay: .2s;
+}
+.fade.delay-2 {
+    transition-delay: .4s;
+}
+.fade.right {
+    transform: translateX(-30px);
+}
+.fade.left {
+    transform: translateX(30px);
+}
+.fade.top {
+    transform: translateY(30px);
+}
+.fade.bottom {
+    transform: translateY(-30px);
 }
 
 /* Buttons */
@@ -224,13 +260,13 @@ a.none_dec {
     font-size: var(--textmiddle);
     text-decoration: none;
     border-radius: 50px;
-    border: 2px solid var(--green);
+    border: 1px solid var(--green);
     color: var(--green);
 
     transition: .2s;
 }
 .button.red {
-    border: 2px solid var(--red);
+    border: 1px solid var(--red);
     color: var(--red);
 }
 .button.red:hover {
@@ -244,6 +280,41 @@ a.none_dec {
 .button.small {
     padding: 5px 10px;
 }
+/* Input */
+.input_parent .placeholder {
+    padding: 5px;
+    font-size: 16px;
+
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -5;
+
+    color: var(--darkgery);
+    background: var(--darkblue);
+    border-radius: 20px;
+
+    transition: .2s;
+}
+.input {
+    padding: 10px;
+    width: 200px;
+
+    background: none;
+    border-radius: 50px;
+    color: var(--darkgery);
+    border: 1px solid var(--darkgery);
+    font-family: Montserrat;
+
+    transition: .2s;
+}
+.input:focus {
+    border: 1px solid var(--grey);
+}
+.input.anim:focus {
+    width: 500px;
+}
 
 /* Header */
 .header {
@@ -251,9 +322,61 @@ a.none_dec {
     height: 80px;
 
     position: fixed;
+    left: 0;
+    top: 0;
+    margin: 0;
     z-index: 999;
 
     background: var(--darkblue);
+    border-bottom: 1px solid #202020;
+}
+.nav {
+    width: 100%;
+
+    position: sticky;
+    left: 0;
+    top: 80px;
+    z-index: 998;
+
+    transition: .2s;
+}
+.nav .bg {
+    width: 100vw;
+    height: 100%;
+    
+    position: absolute;
+    left: -calc(100vw - var(--containerwidth));
+    top: 0;
+
+    background: var(--darkblue);
+    border-bottom: 1px solid #202020;
+}
+.nav .nav_list_item a {
+    text-decoration: none;
+    color: var(--darkgery);
+
+    transition: .1s;
+}
+.nav .nav_list_item.active a {
+    text-decoration: none;
+    color: #fff;
+
+    transition: .1s;
+}
+.nav .nav_list_item ~ .stroke {
+    width: 50px;
+    height: 1px;
+
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+
+    background: #fff;
+
+    transition: .3s;
+}
+.nav .nav_list_item:hover a {
+    color: #fff;
 }
 
 /* DECORE */
@@ -277,7 +400,7 @@ a.none_dec {
 }
 #circlePurple1 {
     left: -40px;
-    top: -20px;
+    top: 90px;
 }
 #circleRed1 {
     left: 100%;
@@ -425,18 +548,20 @@ a.none_dec {
 .card.tabel {
     padding: 0;
     border-radius: 50px;
+    z-index: 30;
 }
 
 .discription_box {
     transform: scaleY(0);
     transition-delay: .2s;
-    z-index: 50;
+    z-index: 200;
 }
 .discription {
     width: 100%;
     
     position: absolute;
     transform: translateY(-75px);
+    z-index: 50;
     
     opacity: 0;
 
@@ -448,4 +573,11 @@ a.none_dec {
 }
 .author:hover .discription_box .discription {
     opacity: 1;
+}
+
+.footer {
+    width: 100%;
+    min-height: 400px;
+
+    background: #151515;
 }
