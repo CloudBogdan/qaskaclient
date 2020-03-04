@@ -102,6 +102,9 @@ a.none_dec {
 .margin.ver {
     margin: var(--middle) 0;
 }
+.margin.ver.max {
+    margin: var(--max) 0;
+}
 .margin.ver.min {
     margin: var(--min) 0;
 }
@@ -204,6 +207,9 @@ a.none_dec {
 }
 .text {
     font-size: var(--textmiddle);
+}
+.wraping_text {
+    text-align: left;
 }
 .text.small {
     font-size: var(--textsmall);
@@ -332,6 +338,7 @@ a.none_dec {
 }
 .nav {
     width: 100%;
+    height: 20px;
 
     position: sticky;
     left: 0;
@@ -363,17 +370,24 @@ a.none_dec {
 
     transition: .1s;
 }
-.nav .nav_list_item ~ .stroke {
-    width: 50px;
+.nav .nav_list_item::after {
+    content: "";
+
+    width: 100%;
     height: 1px;
 
     position: absolute;
     left: 0;
-    bottom: -1px;
+    bottom: calc(-100% + 3px);
 
     background: #fff;
+    opacity: 0;
 
-    transition: .3s;
+    transition: .2s;
+}
+.nav .nav_list_item.active::after,
+.nav .nav_list_item:hover::after {
+    opacity: 1;
 }
 .nav .nav_list_item:hover a {
     color: #fff;
@@ -404,21 +418,20 @@ a.none_dec {
 }
 #circleRed1 {
     left: 100%;
-    top: -20px;
 }
 #circlePurple2 {
     left: -70px;
     top: -20px;
 }
 #circleRed2 {
-    left: 280px;
+    left: 250px;
     top: -20px;
 }
 #vopros {
     transform-origin: center bottom;
     width: 47px;
     height: 74px;
-    left: -30px;
+    left: 260px;
     top: -30px;
 }
 #choosePath {
@@ -439,6 +452,9 @@ a.none_dec {
     background: var(--darkblue);
     border: 1px solid #202020;
     border-radius: 30px;
+}
+.card_discription {
+    height: 280px;
 }
 .card_header {
     display: flex;
@@ -580,4 +596,31 @@ a.none_dec {
     min-height: 400px;
 
     background: #151515;
+}
+
+
+@media screen and (max-width: 940px) {
+    body {
+        --containerwidth: 800px;
+    }
+
+    .choose {
+        flex-direction: column;
+        height: 440px;
+    }
+    .content.wrap.big {
+        flex-direction: column;
+        align-items: center;
+    }
+    .section_n1 {
+        height: max-content;
+    }
+    .wraping_text {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        --containerwidth: 640px;
+    }
 }

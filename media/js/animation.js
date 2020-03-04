@@ -1,5 +1,16 @@
 var dt = 0;
 
+var wind = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+};
+$(window).on("resize", ()=> {
+    wind = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+    };
+});
+
 var words = [
     "people",
     "you",
@@ -45,38 +56,15 @@ $(window).on("click", ()=> {
             "font-size": ""
         });
     }
-}); 
-
-const item = $(".nav_list_item");
-const stroke = $(".nav .stroke");
-
-stroke.css({
-    width: $(".nav_list_item.active").width() + 1 + "px",
-    left: $(".nav_list_item.active").offset().left - 185 + "px"
-});
-
-$(window).on("mousemove", ()=> {
-    item.each(i=> {
-        item.eq(i).on("mouseover", ()=> {
-            stroke.css({
-                width: item.eq(i).width() + 1 + "px",
-                left: item.eq(i).offset().left - 185 + "px"
-            });
-        });
-        item.eq(i).on("mouseout", ()=> {
-            stroke.css({
-                width: $(".nav_list_item.active").width() + 1 + "px",
-                left: $(".nav_list_item.active").offset().left - 185 + "px"
-            });
-        });
-    });
 });
 
 const nav = $(".nav");
+const start_pos = nav.offset().top;
+
 $(window).on("wheel", e=> {
     var deltaY = e.originalEvent.deltaY;
     
-    if (nav.offset().top > 698) {
+    if (nav.offset().top > start_pos) {
         if (deltaY > 0) {
             nav.css({
                 transform: "translateY(-100%)"
