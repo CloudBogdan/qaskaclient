@@ -1,6 +1,6 @@
 const need_responce = "Learn JS, it's cool";
-var responce = "";
-var cursore_pos = -1;
+let responce = "";
+let cursore_pos = -1;
 
 setTimeout(()=> {
     setInterval(()=> {

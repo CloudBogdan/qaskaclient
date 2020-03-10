@@ -1,6 +1,6 @@
-var dt = 0;
+let dt = 0;
 
-var wind = {
+let wind = {
     width: window.innerWidth,
     height: window.innerHeight,
 };
@@ -11,7 +11,7 @@ $(window).on("resize", ()=> {
     };
 });
 
-var words = [
+let words = [
     "people",
     "you",
     "programmers",
@@ -19,7 +19,7 @@ var words = [
     "me",
     "all"
 ];
-var word_index = 0;
+let word_index = 0;
 
 function loop() {
     requestAnimationFrame(loop);
@@ -33,7 +33,7 @@ function loop() {
     });
 
 
-    var jump = -Math.abs(Math.sin(dt)) * 10;
+    let jump = -Math.abs(Math.sin(dt)) * 10;
     $(".jump").css({
         transform: `translateY(${ jump }px)`
     });
@@ -62,7 +62,7 @@ const nav = $(".nav");
 const start_pos = nav.offset().top;
 
 $(window).on("wheel", e=> {
-    var deltaY = e.originalEvent.deltaY;
+    let deltaY = e.originalEvent.deltaY;
     
     if (nav.offset().top > start_pos) {
         if (deltaY > 0) {

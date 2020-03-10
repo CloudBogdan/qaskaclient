@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <!-- Styles -->
     <link rel="stylesheet" href="media/css/style.css">
@@ -16,18 +15,25 @@
     <title>Qaska</title>
 </head>
 <body>
-    <header class="header content jus padding hor max center">
-        <a href="/">
-            <img src="media/img/logo.svg" alt="">
-        </a>
+    <header class="header content jus padding hor max">
         <div class="content center">
-            <!-- >>>> FIXUS <<<< -->
-            <div class="input_parent">
-                <input type="text" class="input anim text grey">
-                <div class="placeholder">Find a question...</div>
+            <a href="/">
+                <img src="media/img/logo.svg" alt="">
+            </a>
+        </div>
+        <div class="content">
+            <div class="content center menu_bars">
+                <!-- >>>> FIXUS <<<< -->
+                <div class="input_parent">
+                    <input type="text" class="input anim text grey findques">
+                    <div class="placeholder">Find a question...</div>
+                </div>
+                <div class="margin">
+                    <a href="#" class="button">Log in</a>
+                </div>
             </div>
-            <div class="margin hor">
-                <a href="#" class="button">Log in</a>
+            <div class="menu content center">
+                <i class="fas fa-ellipsis-v"></i>
             </div>
         </div>
     </header>
@@ -301,7 +307,7 @@
         <!-- SECTION 5 -->
         <section class="section">
             <!-- ======================== CONTACTS ======================== -->
-            <div class="content text wrap">
+            <div class="content text wrap big">
                 <div class="centered text_center margin">
                     <div class="block">
                         Contacts
@@ -458,5 +464,6 @@
     <script src="media/js/print.js"></script>
     <script src="media/js/animation.js"></script>
     <script src="media/js/fade.js"></script>
+    <script src="media/js/menu.js"></script>
 </body>
 </html>

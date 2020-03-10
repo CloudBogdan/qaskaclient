@@ -8,8 +8,10 @@ const fade = {
 
 const win = $(window);
 
-win.on("scroll", ()=> {
-    if (wind.width > 820) {
+win.on("scroll", e=> {
+    console.log(e);
+    
+    if (win.width() > 820) {
         fade.all.each(i=> {
             if (win.scrollTop() + win.height() - 200 > fade.all.eq(i).offset().top) {
 
@@ -42,7 +44,8 @@ win.on("scroll", ()=> {
     } else {
         fade.all.each(i=> {
             fade.all.eq(i).css({
-                opacity: 1
+                opacity: 1,
+                transition: "0s"
             });
 
             fade.right.eq(i).css({

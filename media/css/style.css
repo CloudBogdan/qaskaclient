@@ -68,7 +68,7 @@ a.none_dec {
 }
 .block {
     display: flex;
-    flex-direction: column;
+    -webkit-flex-direction: column;
 }
 .block.center {
     height: 100%;
@@ -187,7 +187,7 @@ a.none_dec {
 .section {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    -webkit-flex-direction: column;
     margin: 40px 0;
 }
 .section_n1 {
@@ -478,7 +478,7 @@ a.none_dec {
 }
 .card_content {
     display: flex;
-    flex-direction: column;
+    -webkit-flex-direction: column;
 }
 .card_footer {
     display: flex;
@@ -511,7 +511,7 @@ a.none_dec {
     height: 280px;
     
     overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 .language_list {
     width: max-content;
@@ -599,6 +599,16 @@ a.none_dec {
     background: #151515;
 }
 
+.menu {
+    font-size: 30px;
+
+    position: absolute;
+    float: right;
+    text-align: center;
+    display: none;
+
+    color: #fff;
+}
 
 @media screen and (max-width: 940px) {
     body {
@@ -606,11 +616,11 @@ a.none_dec {
     }
 
     .choose {
-        flex-direction: column;
+        -webkit-flex-direction: column;
         height: 440px;
     }
     .content.wrap.big {
-        flex-direction: column;
+        -webkit-flex-direction: column;
         align-items: center;
     }
     .section_n1 {
@@ -623,5 +633,60 @@ a.none_dec {
 @media screen and (max-width: 768px) {
     body {
         --containerwidth: 640px;
+    }
+}
+@media screen and (max-width: 572px) {
+    body {
+        --containerwidth: 500px;
+    }
+    .path,
+    #cards {
+        display: none;
+    }
+    .choose {
+        width: 340px;
+        height: 540px;
+
+        -webkit-flex-direction: column;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+    }
+    .language_list_box {
+        height: 500px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .language_list {
+        padding: 0 40px;
+        width: 300px;
+        -webkit-flex-direction: column;
+    }
+    .lan_list_item {
+        border-right: none;
+        border-bottom: 1px solid #202020;
+    }
+
+    .menu {
+        display: unset;
+    }
+    .menu_bars {
+        padding: 20px 40px;
+        width: 80vw;
+        height: 100vh;
+
+        left: calc(-100% + 240px);
+        z-index: 80;
+        transform: translateX(-100%);
+        -webkit-flex-direction: column;
+
+        background: var(--darkblue);
+        border: 1px solid #202020;
+
+        transition: .2s;
+    }
+    .input.anim.findques,
+    .input.anim.findques:focus {
+        width: 100%;
     }
 }
